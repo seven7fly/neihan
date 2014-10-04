@@ -31,7 +31,7 @@ public class ClientAPI {
 		String categoryParam="category_id="+categoryType;
 		String countParam="count="+itemCount;
 		String deviceTypeParam="device_type=KFTT";
-		String openUDID="openudid=e49bde357d818198";
+		String openUDID="openudid=b90ca6a3a19a78d6";
 				
 		String url=CATEGORY_LIST_API
 					+"?"
@@ -42,7 +42,7 @@ public class ClientAPI {
 					+deviceTypeParam
 					+"&"
 					+openUDID
-					+"&level=6&iid=2337593504&device_id=2757969807&ac=wifi&channel=wandoujia&aid=7&app_name=joke_essay&version_code=302&device_platform=android&os_api=15&os_version=4.0.3 HTTP/1.1";
+					+"&level=6&iid=2337593504&device_id=2757969807&ac=wifi&channel=wandoujia&aid=7&app_name=joke_essay&version_code=302&device_platform=android&os_api=15&os_version=4.0.3";
 				
 		queue.add(new StringRequest(Request.Method.GET, url, 
 				responseListener, new Response.ErrorListener() {

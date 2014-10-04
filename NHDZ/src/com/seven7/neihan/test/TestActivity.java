@@ -1,28 +1,18 @@
 package com.seven7.neihan.test;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
-
-import cn.sharesdk.framework.l;
 
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.toolbox.Volley;
 import com.seven7.neihan.R;
-import com.seven7.neihan.R.layout;
-import com.seven7.neihan.R.menu;
 import com.seven7.neihan.bean.ImageEntity;
-import com.seven7.neihan.bean.ImageUrlList;
 import com.seven7.neihan.client.ClientAPI;
 
 import android.os.Bundle;
 import android.app.Activity;
-import android.app.ListActivity;
-import android.util.Log;
 import android.view.Menu;
 
 /***
@@ -67,6 +57,7 @@ public class TestActivity extends Activity implements Response.Listener<String>{
 //	    Log.i("TTT", response);	    
 	    try {
 			JSONObject jsonObject=new JSONObject(response);
+			String test=jsonObject.toString(4);
 			System.out.println("List:"+jsonObject.toString(4));
 //			Log.i("json", "LIST:"+jsonObject.toString(4));
 			
