@@ -25,7 +25,7 @@ public class ClientAPI {
 	public static void getList(RequestQueue queue,int itemCount,int categoryType,Response.Listener<String> responseListener) {
 		//TODO 测试内涵段子接口列表，获取文本列表
 				
-		String CATEGORY_LIST_API="http://ic.snssdk.com/2/essay/zone/category/data/?";
+		String CATEGORY_LIST_API="http://ic.snssdk.com/2/essay/zone/category/data/";
 	
 		//分类参数，根据类型获取不同的数据
 		String categoryParam="category_id="+categoryType;
