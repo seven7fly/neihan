@@ -3,33 +3,37 @@ package com.seven7.neihan.bean;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-public class ImageEntity {
-	private int type;
-	private int coumentCount;
-	private long groupId;
-	private String content;
+public class ImageEntity extends TextEntity{
+
+	
 	private ImageUrlList largeList;
+	
 	private ImageUrlList middleList;
 
 	public void parseJson(JSONObject item) throws JSONException {
-		type = item.getInt("type");
+		super.parseJson(item);
 		
 		JSONObject group=item.getJSONObject("group");
 		
-		coumentCount = group.getInt("comment_count");
+		JSONObject largeIamgeObject=group.optJSONObject("large_image");
+		JSONObject middleIamgeObject=group.optJSONObject("middle_image");
 		
-		JSONObject largeImage=group.getJSONObject("large_image");
+		largeList=new ImageUrlList();
+		if (largeIamgeObject!=null) {
+			largeList.parseJson(largeIamgeObject);
+		}
 		
-		JSONObject middleImage=group.getJSONObject("middle_image");
+		middleList=new ImageUrlList();		
+		if (middleIamgeObject!=null) {
+			middleList.parseJson(middleIamgeObject);
+		}
 		
-		groupId = group.getLong("group_id");
-		
-		content = group.getString("content");
-		
-		largeList = new ImageUrlList();				
-		largeList.parseJson(largeImage);
-		
-		middleList = new ImageUrlList();
-		middleList.parseJson(middleImage);
+
 	}
+
+	
+
+
+	
+	
 }
