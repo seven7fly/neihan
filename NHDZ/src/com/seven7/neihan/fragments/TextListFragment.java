@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 
+import cn.sharesdk.framework.h;
+
 import com.handmark.pulltorefresh.library.PullToRefreshBase;
 import com.handmark.pulltorefresh.library.PullToRefreshBase.Mode;
 import com.handmark.pulltorefresh.library.PullToRefreshBase.OnRefreshListener2;
@@ -99,6 +101,7 @@ public class TextListFragment extends Fragment
 		//TODO 添加列表上面的快速工具条(Header)
 		headerView=inflater.inflate(R.layout.listview_header_textlist, listView,false);
 		listView.addHeaderView(headerView);
+		headerView.setVisibility(View.VISIBLE);
 		
 		View quickPublisView=headerView.findViewById(R.id.quick_tools_publish);
 		quickPublisView.setOnClickListener(this);
@@ -174,6 +177,9 @@ public class TextListFragment extends Fragment
 			//证明现在是向上移动
 			if (quickTools!=null) {
 				quickTools.setVisibility(View.INVISIBLE);
+				if (headerView.getVisibility()==View.INVISIBLE) {
+					headerView.setVisibility(View.VISIBLE);
+				}
 			}
 			
 		}else if(offset>0){
@@ -181,9 +187,9 @@ public class TextListFragment extends Fragment
 			if (quickTools!=null) {
 				quickTools.setVisibility(View.VISIBLE);
 				//设置Header第一次为显示，其他为隐藏
-//				if (headerView.getVisibility()==View.VISIBLE) {
-//					headerView.setVisibility(View.INVISIBLE);
-//				}
+				if (headerView.getVisibility()==View.VISIBLE) {
+					headerView.setVisibility(View.INVISIBLE);
+				}
 			}
 			
 		}
