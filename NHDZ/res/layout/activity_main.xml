@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+    	
+	    <FrameLayout 
+	        android:id="@+id/main_fragment_content"
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content"
+	        android:layout_weight="1"
+	        ></FrameLayout>
+
+	    <RadioGroup 
+	        android:id="@+id/main_top_bar"
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content"
+	        android:orientation="horizontal"
+	        android:background="@drawable/bg_tabbar"
+	        >
+	        <RadioButton 
+	            android:id="@+id/main_top_item_text"
+	            style="@style/main_tab_item"
+	           	android:text="@string/main_tab_item_text"
+	           	android:checked="true"
+	           	android:drawableTop="@drawable/main_text_item_essay_bg"
+	            />
+	        <RadioButton 
+	            android:id="@+id/main_top_item_img"
+	            style="@style/main_tab_item"
+	            android:text="@string/main_tab_item_img"
+	            android:drawableTop="@drawable/main_image_item_essay_bg"
+	            />
+	        <RadioButton 
+	            android:id="@+id/main_top_item_check"
+	            style="@style/main_tab_item"
+	            android:text="@string/main_tab_item_review"
+	            android:drawableTop="@drawable/main_review_item_essay_bg"
+	            />
+	        <RadioButton 
+	            android:id="@+id/main_top_item_activities"
+	            style="@style/main_tab_item"
+	            android:text="@string/main_tab_item_huodong"
+	            android:drawableTop="@drawable/main_huodong_item_essay_bg"
+	            />
+	        <RadioButton 
+	            android:id="@+id/main_top_item_mine"
+	            style="@style/main_tab_item"
+	            android:text="@string/main_tab_item_mine"
+			    android:drawableTop="@drawable/main_mine_item_essay_bg"
+	            />
+	    </RadioGroup>
+</LinearLayout>

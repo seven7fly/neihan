@@ -1,4 +1,8 @@
-package com.seven7.neihan;
+package com.seven7.neihan.activitys;
+
+import com.seven7.neihan.R;
+import com.seven7.neihan.R.layout;
+import com.seven7.neihan.R.menu;
 
 import android.os.Bundle;
 import android.app.Activity;

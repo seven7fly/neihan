@@ -16,12 +16,12 @@
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
         <activity
-            android:name="com.seven7.neihan.LoginActivity"
+            android:name="com.seven7.neihan.activitys.LoginActivity"
             android:label="@string/app_name" >
         </activity>
         <activity
-            android:name="com.seven7.neihan.test.TestActivity"
-            android:label="@string/title_activity_test" >
+            android:name="com.seven7.neihan.activitys.MainActivity"
+            android:label="@string/app_name" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
