@@ -1,9 +1,18 @@
 package com.seven7.neihan.bean;
 
+import java.io.Serializable;
+
 import org.json.JSONException;
 import org.json.JSONObject;
 
-public class UserEntity {
+import android.util.Log;
+
+public class UserEntity implements Serializable{
+	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 6631201150796978759L;
 	/**
 	 * 头像网址
 	 */
@@ -25,6 +34,7 @@ public class UserEntity {
 		if(json!=null){
 			this.avatarUrl=json.getString("avatar_url");
 			this.name=json.getString("name");
+			Log.i("UserEntity", name);
 			this.userId=json.getLong("user_id");
 			this.userVerified=json.getBoolean("user_verified");
 		}

@@ -1,5 +1,6 @@
 package com.seven7.neihan.bean;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -7,7 +8,11 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-public class ImageUrlList {
+public class ImageUrlList implements Serializable{
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -4831032412777170461L;
 	private List<String> lagetImageUrls;
 	private String uri;
 	private int width;

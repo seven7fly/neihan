@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <ImageView
+        android:id="@+id/comment_profile_img"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/icon" />
+
+    <TextView
+        android:id="@+id/comment_profile_nick"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@id/comment_profile_img"
+        android:layout_marginLeft="10dp"
+        android:layout_toRightOf="@id/comment_profile_img"
+        />
+
+    <TextView
+        android:id="@+id/comment_create_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@id/comment_profile_nick"
+        android:layout_below="@id/comment_profile_nick"
+        android:layout_marginTop="10dp"
+        android:text="1小时前" />
+
+    <TextView
+        android:id="@+id/comment_content"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@id/comment_profile_nick"
+        android:layout_alignParentRight="true"
+        android:layout_below="@id/comment_create_time"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="10dp"
+        android:background="#F00"
+        android:text="评论内容" />
+
+    <CheckBox
+        android:id="@+id/item_count_digg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:button="@drawable/item_count_digg_bg"       
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="10dp"       
+        android:text="123" />
+
+</RelativeLayout>

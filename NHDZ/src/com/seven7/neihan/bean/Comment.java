@@ -1,11 +1,19 @@
 package com.seven7.neihan.bean;
 
+import java.io.Serializable;
+
 import org.json.JSONException;
 import org.json.JSONObject;
 
-public class Comment {
+import android.util.Log;
+
+public class Comment implements Serializable{
 
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 4766514780061558110L;
 	private String userProfileImageUrl;
 	private String userName;
 	private String platform;
@@ -20,6 +28,7 @@ public class Comment {
 	private long createTime;
 	private String text;
 	private long uid;
+	private int userDigg;
 
 	public void parseJson(JSONObject json) throws JSONException{
 		if(json!=null){
@@ -33,11 +42,13 @@ public class Comment {
 			buryCount = json.getInt("bury_count");
 			description = json.optString("description","null");
 			diggCount = json.getInt("digg_count");
+			userDigg = json.getInt("user_digg");
 			userVerified = json.getBoolean("user_verified");
 			platform = json.getString("platform");
 			userName = json.getString("user_name");
 			userProfileImageUrl = json.getString("user_profile_image_url");//用户头像网址
 		}
+		Log.i("CommentEntity", toString());
 	}
 
 	public String getUserProfileImageUrl() {
@@ -95,6 +106,16 @@ public class Comment {
 	public long getUid() {
 		return uid;
 	}
+
+	public int getuserDigg() {
+		// TODO Auto-generated method stub
+		return userDigg;
+	}
+
+	/* (non-Javadoc)
+	 * @see java.lang.Object#toString()
+	 */
+	
 	
 	/*
 	 *  {
@@ -115,4 +136,16 @@ public class Comment {
          "user_profile_image_url": "http://p1.pstatp.com/thumb/1030/5256143796"
      }, 
 	 */
+	
+	@Override
+	public String toString() {
+		return "Comment [userProfileImageUrl=" + userProfileImageUrl
+				+ ", userName=" + userName + ", platform=" + platform
+				+ ", userVerified=" + userVerified + ", diggCount=" + diggCount
+				+ ", description=" + description + ", buryCount=" + buryCount
+				+ ", userId=" + userId + ", userProfileUrl=" + userProfileUrl
+				+ ", userBury=" + userBury + ", id=" + id + ", createTime="
+				+ createTime + ", text=" + text + ", uid=" + uid
+				+ ", userDigg=" + userDigg + "]";
+	}
 }

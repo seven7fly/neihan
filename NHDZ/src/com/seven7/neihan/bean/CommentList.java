@@ -1,5 +1,6 @@
 package com.seven7.neihan.bean;
 
+import java.io.Serializable;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -24,7 +25,12 @@ import cn.sharesdk.dropbox.c;
  * @author aaa
  *
  */
-public class CommentList {
+public class CommentList implements Serializable{
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -5521252491844413406L;
 
 	private List<Comment> topComments;
 	

@@ -1,4 +1,4 @@
-package com.seven7.neihan.activitys;
+package com.seven7.neihan;
 
 import com.seven7.neihan.R;
 import com.seven7.neihan.R.layout;

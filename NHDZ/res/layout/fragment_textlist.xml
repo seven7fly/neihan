@@ -4,11 +4,29 @@
     android:layout_height="match_parent"
     android:orientation="vertical" >
     	<!-- 标题部分 -->
-	    <TextView
-	        android:id="@+id/textlist_fragment_title"
-	        android:layout_width="match_parent"
-	        android:layout_height="wrap_content"
-	        android:text="@string/main_tab_item_text" />
+
+    	<LinearLayout
+    	    android:layout_width="match_parent"
+    	    android:layout_height="wrap_content"
+    	    android:background="#FFF"
+    	    android:orientation="horizontal" >
+
+    	    <TextView
+    	        android:id="@+id/textlist_fragment_title"
+    	        android:layout_width="wrap_content"
+    	        android:layout_height="wrap_content"
+    	        android:layout_gravity="center_vertical"
+    	        android:gravity="center"
+    	        android:layout_weight="1"
+    	        android:text="@string/main_tab_item_text"
+    	        android:textSize="20sp" />
+
+    	    <ImageView
+    	        android:id="@+id/textlist_fragment_refresh"
+    	        android:layout_width="wrap_content"
+    	        android:layout_height="wrap_content"
+    	        android:src="@drawable/ic_refresh_normal" />
+    	</LinearLayout>
 	    
 	    <FrameLayout 
 	        android:layout_width="match_parent"

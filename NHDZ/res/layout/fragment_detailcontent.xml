@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+    
+    <ScrollView 
+        android:id="@+id/detail_fragment_scrollview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+        <LinearLayout 
+            android:id="@+id/detail_fragment_scrollLinear"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            
+            <!-- 主体内容重用ListView的item -->
+			<include layout="@layout/item"/>
+			
+			<TextView
+			    android:id="@+id/detail_fragment_hot_comments_txt" 
+			    android:layout_width="match_parent"
+			    android:layout_height="wrap_content"
+			    android:text="热门评论"/>
+			
+			<ListView 
+			    android:id="@+id/detail_fragment_hot_comments_list"
+			    android:layout_width="match_parent"
+			    android:layout_height="wrap_content">
+			    
+			</ListView>
+			
+			<TextView
+			    android:id="@+id/detail_fragment_recent_comments_txt" 
+			    android:layout_width="match_parent"
+			    android:layout_height="wrap_content"
+			    android:text="新鲜评论"/>
+			
+			<ListView 
+			    android:id="@+id/detail_fragment_recent_comments_list"
+			    android:layout_width="match_parent"
+			    android:layout_height="wrap_content">
+			    
+			</ListView>
+        </LinearLayout>
+	   
+    </ScrollView>
+    
+    
+   	
+	
+    
+</LinearLayout>

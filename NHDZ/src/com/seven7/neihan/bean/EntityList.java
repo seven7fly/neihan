@@ -1,5 +1,6 @@
 package com.seven7.neihan.bean;
 
+import java.io.Serializable;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -23,8 +24,12 @@ import android.util.Log;
  * @author aaa
  *
  */
-public class EntityList {
+public class EntityList implements Serializable{
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1605615299799607332L;
 	private boolean hasMore;
 	private long minTime;
 	private String tip;

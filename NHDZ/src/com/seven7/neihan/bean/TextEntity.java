@@ -1,15 +1,24 @@
 package com.seven7.neihan.bean;
 
+import java.io.Serializable;
+
 import org.json.JSONException;
 import org.json.JSONObject;
+
+import android.util.Log;
 /***
  * 文本段子实体
  * @author aaa
  *
  */
-public class TextEntity{
+public class TextEntity implements Serializable{
 
-protected int type;
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 5523106671169588058L;
+
+	protected int type;
 	
 	protected long createTime;
 	
@@ -111,6 +120,7 @@ protected int type;
 	
 	
 	private UserEntity user;
+
 	
 	public void parseJson(JSONObject json) throws JSONException{
 		if (json!=null) {
@@ -119,17 +129,31 @@ protected int type;
 			
 			JSONObject group=json.getJSONObject("group");
 			this.createTime=group.getLong("create_time");
+			Log.i("TextEntity", "createTime====="+createTime);
 			this.favoriteCount=group.getInt("favorite_count");
+			Log.i("TextEntity", "favoriteCount====="+favoriteCount);
 			this.buryCount=group.getInt("bury_count");
+			Log.i("TextEntity", "buryCount====="+buryCount);
 			this.userBury=group.getInt("user_bury");
+			Log.i("TextEntity", "userBury====="+userBury);
 			this.userFavorite=group.getInt("user_favorite");
+			Log.i("TextEntity", "userFavorite====="+userFavorite);
 			this.shareUrl=group.getString("share_url");
+			Log.i("TextEntity", "shareUrl====="+shareUrl);
 			this.label=group.optInt("label",0);
+			Log.i("TextEntity", "label====="+label);
 			this.content=group.getString("content");
+			Log.i("TextEntity", "content====="+content);
 			this.status=group.getInt("status");
+			Log.i("TextEntity", "status====="+status);
 			this.statusDesc=group.getString("status_desc");
-			this.hasComments=group.optInt("has_comments",0);
+			Log.i("TextEntity", "statusDesc====="+statusDesc);
+			this.hasComments=group.getInt("has_comments");
+			Log.i("TextEntity", "hasComments====="+hasComments);
+			this.commentCount=group.getInt("comment_count");
+			Log.i("TextEntity", "commentCount====="+commentCount);
 			this.goDetailCount=group.getInt("go_detail_count");
+			Log.i("TextEntity", "goDetailCount====="+goDetailCount);
 			
 //			//我自己的写法
 //			user=new UserEntity();
@@ -140,12 +164,21 @@ protected int type;
 			user.parseJson(uobj);
 			
 			this.userDigg=group.getInt("user_digg");
+			Log.i("TextEntity", "userDigg====="+userDigg);
 			this.diggCount=group.getInt("digg_count");
+			Log.i("TextEntity", "diggCount====="+diggCount);
 			this.groupId=group.getLong("group_id");
+			Log.i("TextEntity", "groupId====="+groupId);
 			this.level=group.getInt("level");
+			Log.i("TextEntity", "level====="+level);
 			this.repinCount=group.getInt("repin_count");
+			Log.i("TextEntity", "repinCount====="+repinCount);
 			this.userRepin=group.getInt("user_repin");
+			Log.i("TextEntity", "userRepin====="+userRepin);
 			this.categoryId=group.getInt("category_id");
+			Log.i("TextEntity", "categoryId====="+categoryId);
+			this.hasHotComments=group.optInt("has_hot_comments",0);
+			Log.i("TextEntity", "hasHotComments====="+hasHotComments);
 			
 		}
 		
